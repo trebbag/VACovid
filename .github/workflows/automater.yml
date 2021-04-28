@@ -2,7 +2,7 @@ name: VACovid-automater-gg
 
 on:
   schedule:
-    - cron: '0 5 * * *'
+    - cron: '0 5/22 * * *'
 
 jobs:
   build:
