@@ -18,7 +18,7 @@ The more difficult aspect of this project was establishing estimates of hospital
 
 Next, veteran population data by age and census population data by age for each county was used to break the total cases into estimated veteran cases (as was down for Veteran Cases per County). 
 
-Finally, data analytics were collected for the general risk of hospitalization per case by age group. These percentages are shown below. By applying eacg risk percentage to their respective case count by age group, a sum was made to reach the general estimated number of hospitalizations given the number of cases.
+Finally, data analytics were collected for the general risk of hospitalization per case by age group. These percentages are shown below. Each risk percentage was applied to the respective age group case count to get estimated hospitalized cases by age group. The sum of these cases was used to reach the general estimated number of hospitalizations given the number of cases.
 
 * Age 17-44:  0.6% - 5.1%
 * Age 45-64:  5.45% - 14.8%
