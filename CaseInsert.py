@@ -22,7 +22,7 @@ covid_today2 = covid_today.drop(['DATE'],axis=1)
 covid_yesterday2 = covid_yesterday.drop(['DATE'],axis=1).rename(columns={'CASES':'YESTER_CASES','DEATHS':'YESTER_DEATHS'})
 covid_lately = pd.merge(covid_today2, covid_yesterday2, how='left', on=AGKEY, suffixes=('','_drop'))
 covid_lately.drop([col for col in covid_lately.columns if 'drop' in col],axis=1,inplace=True)
-covid_lately['YESTER_CASES'] = covid_lately['YESTER_CASES'].fillna(0)
+covid_lately[['FIPS','YESTER_DEATHS','YESTER_CASES']] = covid_lately[['FIPS','YESTER_DEATHS','YESTER_CASES']].fillna(0)
 
 #Add in columns for today and yesterday's cases as well as the veteran share by population percentage
 totpop_withvet = pd.read_csv('data_folder/totpop_withvet.csv',dtype={'FIPS':'str','COUNTY':'str','STATE':'str','POP':'float','VETS':'float','VET_PERCENT':'float'})
