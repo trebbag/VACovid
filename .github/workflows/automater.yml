@@ -2,7 +2,7 @@ name: VACovid-automater-gg
 
 on:
   schedule:
-    - cron: '0 5,21 * * *'
+    - cron: '0 5/22 * * *'
 
 jobs:
   build:
@@ -10,7 +10,7 @@ jobs:
     steps:
 
       - name: checkout repo content
-        uses: action/checkout@v2
+        uses: actions/checkout@v2
 
       - name: setup python
         uses: actions/setup-python@v2
@@ -21,12 +21,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
       - name: execute py script
-        env: 
-          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
         run: python3 CaseInsert.py
 
       - name: commit files
@@ -34,10 +29,9 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git commit -m "auto-update of data" -a
-
+          git commit --allow-empty -m "auto-update of data" -a
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main.  
+          branch: main
