@@ -1,5 +1,6 @@
 import pandas as pd 
 import numpy as np
+from CCTPull import CCTPull 
 
 #Daily updated NYTimes COVID-19 Data 
 covid = pd.read_csv('https://github.com/nytimes/covid-19-data/blob/master/us-counties.csv?raw=true',dtype={'fips':'str'})
@@ -162,3 +163,5 @@ VAChart_newrow = pd.DataFrame({ 'DATE': TodayDate,
 VAChart = pd.concat([VAChart_newrow, VAChart]).reset_index(drop=True).drop_duplicates(subset='DATE',keep='first').round(2)
 
 VAChart.to_csv('VAChart.csv',index=False)
+
+CCTPull(CountyVACOVID)
