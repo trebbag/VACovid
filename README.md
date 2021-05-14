@@ -25,4 +25,14 @@ Finally, data analytics were collected for the general risk of hospitalization p
 * Age 65-84:  15.9% - 26.25%
 * Age 85+:    26.25% - 45%  
 
+## Repository Files
+
+The following is a brief orientation of the files in the respository:
+* Population.py - runs the basic population proportion measurements. Only needs to be run when new census or veteran data is used.
+* CaseInsert.py - original file for daily case data transformations to output for data visualizations
+* CCTPull.py - defined function for case data transformations for OEHRM leadership needs
+* CountyVACOVID.csv - output of all veteran based transformations of daily COVID data - all other outputs are assorted geographic filters from this file 
+* VAChart.csv - orginal data visualization output needs
+* CCTVAChart2.csv - data output needs for OEHRM leadership - Version 2
+
 Data preparation and analytics by Greg Gabbert, MD MPH
